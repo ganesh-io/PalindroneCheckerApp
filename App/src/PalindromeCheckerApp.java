@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
@@ -9,21 +11,27 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // UC5 Logic: Stack-Based Palindrome Check
+        // UC6 Logic: Queue (FIFO) + Stack (LIFO)
+        Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
-        // Step 1: Push all characters onto the stack
+        // Add each character to BOTH data structures
         for (char c : input.toCharArray()) {
-            stack.push(c);
+            queue.add(c);  // Enqueue
+            stack.push(c); // Push
         }
 
-        // Step 2: Pop characters and compare with the original string
-        StringBuilder reversed = new StringBuilder();
-        while (!stack.isEmpty()) {
-            reversed.append(stack.pop());
+        boolean isPalindrome = true;
+
+        // Compare Dequeue (Original order) vs Pop (Reverse order)
+        while (!queue.isEmpty()) {
+            if (!queue.poll().equals(stack.pop())) {
+                isPalindrome = false;
+                break;
+            }
         }
 
-        if (input.equalsIgnoreCase(reversed.toString())) {
+        if (isPalindrome) {
             System.out.println(input + " is a Palindrome.");
         } else {
             System.out.println(input + " is not a Palindrome.");
