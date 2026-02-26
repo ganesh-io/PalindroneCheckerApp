@@ -1,113 +1,116 @@
-# Palindrome Checker App - UC7 (Deque-Based)
+Palindrome Checker App – UC7 (Deque-Based)
+📌 Project Overview
 
-## 📌 Project Overview
-The **Palindrome Checker App** is a console-based Java application designed to strengthen core programming and data structure fundamentals. This specific module implements an optimized palindrome validation using a **Double-Ended Queue (Deque)**.
+The Palindrome Checker App is a console-based Java application developed to strengthen core programming skills and data structure fundamentals.
 
----
+This module, Use Case 7 (UC7), implements an optimized palindrome validation technique using a Double-Ended Queue (Deque). The solution efficiently compares characters from both ends of a string without reversing the string or using additional memory-heavy structures.
 
-## ✅ Use Case 7: Deque-Based Optimized Palindrome Checker
+The project demonstrates structured problem-solving, efficient algorithm design, and practical usage of the Java Collections Framework.
 
-### 🎯 Objective
-The goal of UC7 is to implement a memory-efficient palindrome check by comparing characters from both ends of a string simultaneously using a **Deque**, eliminating the need for string reversal.
+✅ Use Case 7: Deque-Based Optimized Palindrome Checker
+🎯 Objective
 
-### 🧠 Technical Approach
-A **Deque (Double Ended Queue)** allows insertion and deletion from both the **Front** and the **Rear**. This behavior is ideal for palindrome checking as it enables a direct comparison of the first and last characters in a single pass.
+To implement a memory-efficient palindrome validation algorithm by simultaneously comparing characters from the front and rear of a string using a Deque.
 
+This approach eliminates the need for string reversal and reduces unnecessary data handling.
 
+🧠 Technical Approach
 
-### 🏗 Data Structure: Deque
-* **Implementation:** `ArrayDeque` (Java Collections Framework).
-* **Behavior:** Optimized bidirectional traversal.
-* **Key Methods:**
-    * `addLast()` – Inserts characters at the rear.
-    * `removeFirst()` – Removes and retrieves from the front.
-    * `removeLast()` – Removes and retrieves from the rear.
+A Deque (Double Ended Queue) allows insertion and deletion from both:
 
+Front
 
+Rear
 
----
+This behavior makes it ideal for palindrome validation because it enables:
 
-### 🔁 Execution Flow
-1.  **Input:** The user provides a string via the console.
-2.  **Insertion:** Each character of the string is added to the Deque using `addLast()`.
-3.  **Comparison:**
-    * The first character (`removeFirst()`) and last character (`removeLast()`) are removed and compared.
-    * If they do not match, the string is **not** a palindrome.
-4.  **Termination:** The loop continues until the Deque is empty or only one middle character remains.
+Direct comparison of the first and last characters
 
----
+Efficient single-pass traversal
 
-### 💻 Source Code (`UseCase7PalindromeCheckerApp.java`)
+Reduced memory usage
 
-```java
-import java.util.Scanner;
-import java.util.Deque;
-import java.util.ArrayDeque;
+Clean and maintainable logic
 
+Instead of reversing the string or using multiple auxiliary structures, the Deque provides optimized bidirectional comparison.
 
- * UC7: Deque-Based Optimized Palindrome Checker
- * Developed by: Ganesh
- 
-public class UseCase7PalindromeCheckerApp {
-    public static void main(String[] args) {
-        System.out.println("--- Palindrome Checker App (UC7) ---");
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Enter a string: ");
-        String input = sc.nextLine();
-        
-        // Initialize Deque
-        Deque<Character> deque = new ArrayDeque<>();
-        
-        // Load characters into Deque
-        for (char c : input.toCharArray()) {
-            deque.addLast(c);
-        }
+🏗 Data Structure Used
 
-        boolean isPalindrome = true;
+Deque – Implemented using ArrayDeque (Java Collections Framework)
 
-        // Optimized comparison from both ends
-        while (deque.size() > 1) {
-            if (!deque.removeFirst().equals(deque.removeLast())) {
-                isPalindrome = false;
-                break;
-            }
-        }
+Key Methods Utilized
 
-        // Output Result
-        if (isPalindrome) {
-            System.out.println("Result: The given string is a Palindrome.");
-        } else {
-            System.out.println("Result: The given string is NOT a Palindrome.");
-        }
-        
-        sc.close();
-    }
-}
+addLast() – Inserts characters at the rear
+
+removeFirst() – Removes and retrieves the front character
+
+removeLast() – Removes and retrieves the rear character
+
+size() – Determines loop termination condition
+
+🔁 Execution Flow
+
+The user enters a string through the console.
+
+Each character of the string is inserted into the Deque.
+
+The program repeatedly:
+
+Removes the first character
+
+Removes the last character
+
+Compares both characters
+
+If a mismatch occurs, the string is declared NOT a palindrome.
+
+If all comparisons succeed, the string is declared a palindrome.
+
+The process stops when the Deque becomes empty or contains only one middle character.
+
 ⚙️ Compilation & Execution
-Follow these commands in your terminal to run the application:
+
+Run the following commands in your terminal:
 
 Step 1: Compile
-
-Bash
 javac UseCase7PalindromeCheckerApp.java
-Step 2: Run
-
-Bash
+Step 2: Execute
 java UseCase7PalindromeCheckerApp
 🖥 Sample Output
-Plaintext
 Enter a string: racecar
 Result: The given string is a Palindrome.
-
 Enter a string: programming
 Result: The given string is NOT a Palindrome.
 🧩 Key Learning Outcomes
-Efficiency: Bidirectional comparison is more resource-efficient than string reversal.
 
-Collections: Practical use of the java.util.Deque interface.
+Understanding bidirectional data structures
 
-Logic: Mastering loop termination conditions for data structure traversal.
+Practical use of the Deque interface
 
-👨‍💻 Developed for Academic & Skill Enhancement Purposes
-Strengthening Core Java and Data Structure Fundamentals.
+Efficient algorithm design without redundant memory usage
+
+Mastering loop control and condition-based traversal
+
+Strengthening core Java and Collections Framework concepts
+
+🚀 Potential Enhancements
+
+Case-insensitive palindrome validation
+
+Ignoring spaces and special characters
+
+Performance comparison with Stack-based implementation
+
+Integration with unit testing frameworks
+
+GUI-based or web-based extension
+
+👨‍💻 Developed For
+
+Academic learning and skill enhancement in:
+
+Core Java
+
+Data Structures
+
+Algorithm Optimization
