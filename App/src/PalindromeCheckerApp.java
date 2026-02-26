@@ -8,17 +8,23 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // UC3 Logic: String Reversal using loop
-        String reversed = "";
+        // UC4 Logic: Character Array and Two-Pointer Technique
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        boolean isPalindrome = true;
 
-        // Loop starts from the last character and moves to the first
-        for (int i = input.length() - 1; i >= 0; i--) {
-            // String Immutability: This creates a new string object every time
-            reversed = reversed + input.charAt(i);
+        while (start < end) {
+            // Compare characters at both ends
+            if (chars[start] != chars[end]) {
+                isPalindrome = false;
+                break; // Stop immediately if a mismatch is found
+            }
+            start++; // Move front pointer forward
+            end--;   // Move back pointer backward
         }
 
-        // Compare content using .equals() instead of ==
-        if (input.equalsIgnoreCase(reversed)) {
+        if (isPalindrome) {
             System.out.println(input + " is a Palindrome.");
         } else {
             System.out.println(input + " is not a Palindrome.");
