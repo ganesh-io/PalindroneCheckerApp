@@ -1,116 +1,75 @@
-Palindrome Checker App – UC7 (Deque-Based)
-📌 Project Overview
+PalindromeCheckerApp – UC7 (Deque-Based)
+📌 Project Description
 
-The Palindrome Checker App is a console-based Java application developed to strengthen core programming skills and data structure fundamentals.
+PalindromeCheckerApp is a simple Java console application that checks whether a given word or string is a palindrome using a Deque (Double-Ended Queue).
 
-This module, Use Case 7 (UC7), implements an optimized palindrome validation technique using a Double-Ended Queue (Deque). The solution efficiently compares characters from both ends of a string without reversing the string or using additional memory-heavy structures.
+A palindrome is a word, number, or phrase that reads the same forward and backward.
+Example: madam, level, radar.
 
-The project demonstrates structured problem-solving, efficient algorithm design, and practical usage of the Java Collections Framework.
-
-✅ Use Case 7: Deque-Based Optimized Palindrome Checker
 🎯 Objective
 
-To implement a memory-efficient palindrome validation algorithm by simultaneously comparing characters from the front and rear of a string using a Deque.
+The objective of this use case is to:
 
-This approach eliminates the need for string reversal and reduces unnecessary data handling.
+Understand the concept of Deque (Double-Ended Queue)
 
-🧠 Technical Approach
+Practice Java Collections Framework
 
-A Deque (Double Ended Queue) allows insertion and deletion from both:
+Implement optimized string comparison logic
 
-Front
+Perform bidirectional traversal using a data structure
 
-Rear
+Strengthen problem-solving skills in Java
 
-This behavior makes it ideal for palindrome validation because it enables:
+🔄 Project Flow
 
-Direct comparison of the first and last characters
+Display welcome message to the user
 
-Efficient single-pass traversal
+Ask the user to enter a word or string
 
-Reduced memory usage
+Insert each character into a Deque
 
-Clean and maintainable logic
+Remove and compare characters from the front and rear
 
-Instead of reversing the string or using multiple auxiliary structures, the Deque provides optimized bidirectional comparison.
+If mismatch occurs → Not a palindrome
 
-🏗 Data Structure Used
+If all characters match → Palindrome
 
-Deque – Implemented using ArrayDeque (Java Collections Framework)
+Display the result in the console
 
-Key Methods Utilized
+👤 Use Case
 
-addLast() – Inserts characters at the rear
+This application can be used:
 
-removeFirst() – Removes and retrieves the front character
+By students to understand Deque operations
 
-removeLast() – Removes and retrieves the rear character
+To learn efficient palindrome checking
 
-size() – Determines loop termination condition
+To practice Java data structures
 
-🔁 Execution Flow
+As a beginner-to-intermediate Java practice project
 
-The user enters a string through the console.
+▶️ How to Run
 
-Each character of the string is inserted into the Deque.
+Open the project in IntelliJ IDEA (or any Java IDE)
 
-The program repeatedly:
+Compile the file:
 
-Removes the first character
-
-Removes the last character
-
-Compares both characters
-
-If a mismatch occurs, the string is declared NOT a palindrome.
-
-If all comparisons succeed, the string is declared a palindrome.
-
-The process stops when the Deque becomes empty or contains only one middle character.
-
-⚙️ Compilation & Execution
-
-Run the following commands in your terminal:
-
-Step 1: Compile
 javac UseCase7PalindromeCheckerApp.java
-Step 2: Execute
+
+Run the program:
+
 java UseCase7PalindromeCheckerApp
-🖥 Sample Output
-Enter a string: racecar
-Result: The given string is a Palindrome.
-Enter a string: programming
-Result: The given string is NOT a Palindrome.
-🧩 Key Learning Outcomes
 
-Understanding bidirectional data structures
+Enter a word when prompted
 
-Practical use of the Deque interface
+View the result in the console
 
-Efficient algorithm design without redundant memory usage
+💻 Technologies Used
 
-Mastering loop control and condition-based traversal
+Java
 
-Strengthening core Java and Collections Framework concepts
+Java Collections Framework (ArrayDeque)
 
-🚀 Potential Enhancements
+IntelliJ IDEA / VS Code
 
-Case-insensitive palindrome validation
-
-Ignoring spaces and special characters
-
-Performance comparison with Stack-based implementation
-
-Integration with unit testing frameworks
-
-GUI-based or web-based extension
-
-👨‍💻 Developed For
-
-Academic learning and skill enhancement in:
-
-Core Java
-
-Data Structures
-
-Algorithm Optimization
+Git & GitHub
